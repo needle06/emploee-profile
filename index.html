@@ -5,45 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
-    <title>Form for CV</title>
+    <title>Employee Profile </title>
 </head>
 <body>
-    <div class="container">
-        <form action="">
-            <label for="input-FName">First name</label>
-            <input id="input-FName" type="text" placeholder="Enter your first name">
-            <label for="input-LName">Last name</label>
-            <input id="input-LName" type="text" placeholder="Enter your last name">
-            <label for="input-patronim">Patronim</label>
-            <input id = "input-patronim" type="text" placeholder="Enter your patronim">
-
-            <label for="university">University</label>
-            <input id = "university" type="text" placeholder="University">
+        <form enctype="multipart/form-data" method="post">
+            <div class="wrapper">
+                    <label for="input-FName">First name</label>
+                    <input id="input-FName" type="text" placeholder="Enter your first name">
+            </div>
             
-            <label for="facultet">Facultet</label>
-            <input id = "facultet" type="text" placeholder="Facultet">
-       
-            <label for="specialization">Specialization</label>
-            <input id = "specialization" type="text" placeholder="Specialization">
+            <div class="wrapper">
+                <label for="input-LName">Last name</label>
+                <input id="input-LName" type="text" placeholder="Enter your last name">
+            </div>
+            <div class="wrapper">
+                <label for="input-patronim">Patronim</label>
+                <input id = "input-patronim" type="text" placeholder="Enter your patronim">
+            </div>
+            <div class="wrapper">
+                
+                <label for="university">University</label>
+                <input id = "university" type="text" placeholder="University">  
+            </div>
+            <div class="wrapper">
+                    <label for="facultet">Facultet</label>
+                    <input id = "facultet" type="text" placeholder="Facultet">
+            </div> 
+             <div class="wrapper">
+                    <label for="specialization">Specialization</label>
+                    <input id = "specialization" type="text" placeholder="Specialization">
+            </div>
+            <div class="wrapper">
+                    <label for="graduate-year">Graduate year</label>
+                    <input id = "graduate-year" type="date" placeholder="Graduate year">
+            </div>
+            <div class="wrapper">
+                    <label for="phone">Phone number</label>
+                    <input id="phone" type="number" placeholder="Phone number">
+            </div>
+            <div class="wrapper">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Email">
+            </div>
+            <div class="wrapper">
+                    <label for="contacts">Other contact information</label>
+                    <input type="text" placeholder="Other contacts">
+            </div>
+            <div class="wrapper">
+                    <label for="photo">Add your photo</label>
+                    <input type="file" id="photo">
+            </div>
 
-            <label for="graduate-year">Graduate year</label>
-            <input id = "graduate-year" type="date" placeholder="Graduate year">
-            
-            <label for="phone">Phone number</label>
-            <input id="phone" type="tel" placeholder="Phone number">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Email">
-            <label for="contacts">Other contact information</label>
-            <input type="text" placeholder="Other contacts">
-
-            <label for="photo">Add your photo</label>
-            <input type="file" id="photo">
-       
-            <input id = "submit" type="submit" value="OK">
+            <input id = "submit" type="submit" value="Submit">
         </form>
-    </div>
 
-    <p id="result"></p>
+        <div class="list"></div>
 
     <script src="index.js"></script>
 </body>
