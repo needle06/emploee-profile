@@ -51,6 +51,15 @@ input[type=submit] {
     border: 1px solid lightblue;
     background-color: rgb(222, 238, 239);
 }
+.download {
+    margin-left: 100px;
+    padding: 10px;
+    border: 2px solid navy;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: ghostwhite;
+}
 
 @media print {
 
