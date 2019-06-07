@@ -9,10 +9,6 @@ function render() {
   list.innerHTML = '';
   let ol = document.createElement('ol');
   list.appendChild(ol);
-  // ol.style.width = '500px';
-  // ol.style.marginLeft = '100px';
-  // ol.style.border = '1px solid lightblue'
-  // ol.style.backgroundColor = '#deeeef';
   ol.id = 'profile';
   let values = Array.from(inputs).map((el) => {
     return el.value.trim();
@@ -22,15 +18,41 @@ function render() {
     let li = document.createElement('li');
     li.innerHTML = el;
     li.style.color = 'navy';
-    li.style.padding = '5px';
+    li.style.padding = '15px';
     ol.appendChild(li);
   })
   let photo = document.getElementById('photo').files[0];
-  let img = document.createElement('img');
-  img.file = photo;
-  ol.appendChild(img);
-  console.log(photo)
+  let promise = loadPhoto(photo);
+  promise.then (img => {
+    ol.lastChild.innerHTML ="";
+    ol.lastChild.appendChild(img);
+  }, () => {})
+
+  
+
 }
+function loadPhoto (photo) {
+  let promise = new Promise ((resolve,reject) => {
+    try {
+      let reader = new FileReader();
+      reader.readAsDataURL(photo);
+      reader.addEventListener('load', e => {
+        let image = new Image();
+        image.src = e.target.result;
+        image.addEventListener('load', () => {
+          let img = document.createElement('img')
+          img.src = image.src;
+          img.style.width = '500px';
+          resolve(img)
+        })
+      })
+    } catch (error) {
+      reject(error);
+    }
+  })
+  return promise;
+}
+
 
 form.addEventListener('submit', (e) => {
   
