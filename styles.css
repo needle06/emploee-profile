@@ -89,4 +89,7 @@ input[type=submit] {
     font-size: 26pt;
     }
 
+    .download {
+        visibility: hidden;
+    }
 }
