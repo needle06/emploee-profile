@@ -29,12 +29,16 @@ function render() {
       }, () => {});
 
     let download = document.createElement('button');
-    download.innerText = 'Download';
+    let a = document.createElement('a')
+    download.appendChild(a);
+    a.innerText = 'Download';
     download.classList.add('download')
+    a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent( getData(values));
+    a.classList.add('link');
+    a.setAttribute('download', 'profile.json');
     list.appendChild(download);
     download.addEventListener('click', () => {
-      let json = getData(values);
-      console.log(json);
+      a.click()
     })
     
 
