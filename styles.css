@@ -27,9 +27,22 @@ input {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 5px;
+    -webkit-transition: 
+        border-color .15s ease-in-out,
+        -webkit-box-shadow .15s ease-in-out;
+    transition: 
+        border-color .15s ease-in-out,
+        -webkit-box-shadow .15s ease-in-out;
+    -o-transition: 
+        border-color .15s ease-in-out,
+        box-shadow .15s ease-in-out;
     transition: 
         border-color .15s ease-in-out,
         box-shadow .15s ease-in-out;
+    transition: 
+        border-color .15s ease-in-out,
+        box-shadow .15s ease-in-out,
+        -webkit-box-shadow .15s ease-in-out;
 }
 label {
     width: 25%;
